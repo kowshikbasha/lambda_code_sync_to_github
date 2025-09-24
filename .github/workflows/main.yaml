@@ -51,5 +51,6 @@ jobs:
             echo "No changes in Lambda code. Skipping commit."
           else
             git commit -m "Sync Lambda code from AWS Lambda"
+            git pull origin main --rebase
             git push origin HEAD:main
           fi
