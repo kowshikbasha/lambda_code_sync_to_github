@@ -52,3 +52,4 @@ jobs:
           else
             git commit -m "Sync Lambda code from AWS Lambda"
             git push origin HEAD:main
+          fi
