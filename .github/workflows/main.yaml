@@ -11,7 +11,7 @@ jobs:
 
     permissions:
       id-token: write      # needed for OIDC
-      contents: write      # needed to push code to repo
+      contents: write      # needed to push code to rep01
 
     steps:
       # Checkout repository
