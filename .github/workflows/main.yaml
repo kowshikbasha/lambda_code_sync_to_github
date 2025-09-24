@@ -36,10 +36,8 @@ jobs:
             --function-name $FUNC_NAME \
             --query 'Code.Location' \
             --output text)
-
           echo "Downloading Lambda package..."
           curl -L -o lambda.zip "$URL"
-
           rm -rf lambda_code
           unzip -o lambda.zip -d lambda_code
 
@@ -48,10 +46,9 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
-
           git add lambda_code
           if git diff --cached --quiet; then
             echo "No changes in Lambda code. Skipping commit."
           else
             git commit -m "Sync Lambda code from AWS Lambda"
-            git push
+            git push origin HEAD:main
