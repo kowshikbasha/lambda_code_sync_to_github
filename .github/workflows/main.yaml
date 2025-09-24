@@ -1,9 +1,9 @@
 name: Sync AWS Lambda code to GitHub
 
 on:
-  workflow_dispatch:    # allows manual trigger
-  schedule:
-    - cron: "0 0 * * *" # optional: run daily at midnight UTC
+  push:
+    branches: [ "main" ]
+  pull_request:
 
 jobs:
   sync:
